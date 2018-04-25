@@ -1,5 +1,8 @@
 파이썬 키워드 번역 내용을 적는 곳입니다.
-이 담당이었던 김종훈과 전현찬 위주로 활동해주세요.
+키워드의 역할(모듈/반복문/조건문/함수/...)대로 구분해서 작성해주세요.
+또한, 파이썬 3의 내장 함수(print(), input(), ...) 역시 역할대로 구분해서 작성해주세요.
+
+이 파일은 이 담당이었던 김종훈과 전현찬 위주로 활동해주세요.
 
 양식: 파이썬 키워드 - 번역 키워드
  import, from / False, True, None, and, or, not, in, is / for, while, break, continue, pass / if, elif, else / def, return / del
