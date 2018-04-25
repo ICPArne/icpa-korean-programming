@@ -5,7 +5,7 @@ class JongHoon(object):
     def print_jonghoon(self, message):
         print("Jonghoon said,", message)
     @classmethod
-    def is_byeoungsin(cls):
+    def isByeongsin(self):
         return True
     
 jh = JongHoon()
