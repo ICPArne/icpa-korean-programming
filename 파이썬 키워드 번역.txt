@@ -14,29 +14,29 @@
  import, from / False, True, None, and, or, not, in, is / for, while, break, continue, pass / if, elif, else / def, return / del
  
  (1차 제안)
- <모듈>
+ [모듈]
   import - 불러오기
   from - 에서
- 
- <논리연산자>
-  False - 거짓
-  True - 참
-  None - 없음
-  and - 이고
-  or - 이거나
-  not - 아니라(아님, 아니다, 없음)
-  in - 안에
-  is - 
+ [연산자]
+  <논리연산자>
+   False - 거짓
+   True - 참
+   None - 없음
+   and - 이고
+   or - 이거나
+   not - 아니라(아님, 아니다, 없음)
+   in - 안에
+   is - 
 
 if A not in B
 만약 B 안에 A 없음이면
 
- <함수>
+ [함수]
   <키워드>
    return - 돌려주기
 
- <내장함수>
-  (형변환)
+ [내장함수]
+  <형변환>
    str() - 문자형()
    int() - 정수형()
    float() - 실수형()
@@ -44,13 +44,21 @@ if A not in B
    list() - 목록형()
    tuple() - 열거형()
    type() - 자료형()
+   len() - 길이()
+   id() - 주소()
+   sum() - 총합()
  
- <메소드>
-  .upper() - .대문자()
-  .lower() - .소문자()
-  .title() - .제목()
-  .append() - .추가하기()
-  .replace(a,b) - .바꾸기(a,b)
-  .pop(a) - .방출하기(a)
-  .sort() - .정렬하기()
-  .reverse() - .뒤집기()
+ [메소드]
+  <str용>
+   .upper() - .대문자()
+   .lower() - .소문자()
+   .title() - .제목()
+   .replace(a,b) - .바꾸기(a,b)
+  <list용>
+   .append() - .추가하기()
+   .pop(a) - .방출하기(a)
+   .sort() - .정렬하기()
+   .reverse() - .뒤집기()
+   .insert(a,b) - .끼워넣기(a,b)
+   A.join(b) - A.구분하기(b)
+   .split(a) - .자르기(a)
