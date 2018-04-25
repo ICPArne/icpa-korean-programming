@@ -4,7 +4,8 @@ class JongHoon(object):
         self.age = 18
     def print_jonghoon(self, message):
         print("Jonghoon said,", message)
-    def is_byeoungsin(self):
+    @classmethod
+    def is_byeoungsin(cls):
         return True
     
 jh = JongHoon()
