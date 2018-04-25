@@ -12,13 +12,16 @@
  import - 불러오기
  from - 에서
  
- <조건문>
+ <논리연산자>
  False - 거짓
  True - 참
  None - 없음
- and - 그리고(이고)
- or - 또는(이거나)
- not - 아니라(아님)
+ and - 이고
+ or - 이거나
+ not - 아니라(아님, 아니다, 없음)
  in - 안에
  is - 
  
+ 
+ if A not in B
+ 만약 B 안에 A 없음이면
