@@ -4,8 +4,14 @@
 
 이 파일은 이 담당이었던 김종훈과 전현찬 위주로 활동해주세요.
 
-양식: 파이썬 키워드 - 번역 키워드
- import, from / False, True, None, and, or, not, in, is / for, while, break, continue, pass / if, elif, else / def, return / del
+양식:
+[역할]
+  <키워드>
+    키워드 - 번역
+  <내장 함수>
+    내장 함수 - 번역
+    
+ 키워드) import, from / False, True, None, and, or, not, in, is / for, while, break, continue, pass / if, elif, else / def, return / del
  
  (1차 제안)
  <모듈>
