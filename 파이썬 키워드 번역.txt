@@ -8,4 +8,16 @@
  import, from / False, True, None, and, or, not, in, is / for, while, break, continue, pass / if, elif, else / def, return / del
  
  (1차 제안)
- import - 
+ <모듈>
+ import - 불러오기
+ from - 에서
+ 
+ <조건문>
+ False - 거짓
+ True - 참
+ None - 없음
+ and - 그리고(이고)
+ or - 또는(이거나)
+ not - 아니라(아님)
+ in - 안에
+ is - 
