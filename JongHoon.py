@@ -5,14 +5,14 @@ class JongHoon(object):
     def print_jonghoon(self, message):
         print("Jonghoon said,", message)
     @classmethod
-    def isByeongsin(self):
+    def is_byeoungsin(cls):
         return True
     
 jh = JongHoon()
 jh.print_jonghoon("빼애애액")
-#
+
 ##########################################
-# 예상 출력 결과: ######SehwanJeon##가즈아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ#################
-# 빼애애액 ################################
+# 예상 출력 결과: #########################
+# Jonghoon said, 빼애애액 #################
 ##########################################
-#####빼애애애액(현찬이)####################
+##########################################
