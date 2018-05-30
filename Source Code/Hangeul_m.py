@@ -47,5 +47,9 @@ class Hangeul(object):
         else:
             return int(text[:text.find('.')])
 
-
-print(Hangeul.doCalc("0.5 더하기 1"))
+    @classmethod
+    def h_print(cls, text):
+        try:
+            print(eval(text))
+        except Exception as e:
+            print("에러:", e)
