@@ -46,7 +46,7 @@ def doCalc(text):
     text = checkPluMin(text)        #그 후 더하기 계열 진행
     return float(text)
 
-#입력 형식: a 더하기|빼기|곱하기|나누기 b ... (띄어쓰기 O)        
+#입력 형식: a 더하기|빼기|곱하기|나누기 b ... (띄어쓰기 상관X)        
 def main():
     while True:
         text = input("> ")
