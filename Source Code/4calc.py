@@ -44,17 +44,24 @@ def doCalc(text):
     if text == None:
         return
     text = checkPluMin(text)        #그 후 더하기 계열 진행
-    return float(text)
+    if float(text) % 1.0 != 0:
+        return float(text)
+    else:
+        return int(text[:text.find('.')])
 
 #입력 형식: a 더하기|빼기|곱하기|나누기 b ... (띄어쓰기 상관X)        
 def main():
     while True:
-        text = input("> ")
-        temp = doCalc(text)
-        if temp != None:
-            print(temp)
-        else:
-            pass
+        try:
+            text = input("> ")
+            temp = doCalc(text)
+            if temp != None:
+                print(temp)
+            else:
+                pass
+        except:
+            print("계산기 형식으로 입력해주세요.")
+            print("형식: A 더하기/빼기/곱하기/나누기 B ...", end='\n\n')
         
 if __name__ == "__main__":
     main()
