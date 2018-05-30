@@ -4,7 +4,7 @@
 import re
 
 def checkMulDiv(text): #곱하기/나누기 연산
-    rule = re.compile('([0-9]+[.0-9]*[0-9]*)(곱하기|나누기)([0-9]+[,0-9]*[0-9]*)')
+    rule = re.compile('([0-9]+[.0-9]*[0-9]*)(곱하기|나누기)([0-9]+[.0-9]*[0-9]*)')
     searchResult = rule.search(text)
 
     if searchResult == None:
