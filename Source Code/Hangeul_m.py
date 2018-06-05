@@ -48,14 +48,14 @@ class Hangeul(object):
             return int(text[:text.find('.')])
 
     @classmethod
-    def print(cls, text):
+    def h_print(cls, text):
         try:
             print(eval(text))
         except Exception as e:
             print("에러:", e)
 
     @classmethod
-    def input(cls, text = None):
+    def h_input(cls, text = None):
         if text == None:
             return input()
         else:
