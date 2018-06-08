@@ -1,4 +1,4 @@
-# 최종 수정: 2018-05-30
+# 최종 수정: 2018-06-08
 # 수정자: 20307 박진철
 
 import re
@@ -49,11 +49,21 @@ def doCalc(text):
     else:
         return int(text[:text.find('.')])
 
-#입력 형식: a 더하기|빼기|곱하기|나누기 b ... (띄어쓰기 상관X)        
+def modify(text):
+    text = text.replace('+', '더하기')
+    text = text.replace('-', '빼기')
+    text = text.replace('*', '곱하기')
+    text = text.replace('/', '나누기')
+    return text
+
+#입력 형식: a (더하기|빼기|곱하기|나누기) b ... (띄어쓰기 상관X)
+#         : a (+|-|*|/) b ...
 def main():
+    print("한글로 작성하는 계산기")
     while True:
         try:
             text = input("> ")
+            text = modify(text)
             temp = doCalc(text)
             if temp != None:
                 print(temp)
