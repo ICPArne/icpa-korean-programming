@@ -79,7 +79,7 @@ def polish(txt):
                     return    
         else:
             if order(word) == -1:                       #적절하지 않은 문자 탐색(정수, 연산자, 변수가 아닌 문자들)
-                print("바르지 않은 문자 {0}이 입력되었습니다.".format(word))
+                print("잘못된 문자 {0} 입력됨".format(word))
                 return
             
             temp = stack.get_top()                      #연산자 우선 순위 파악 및 추가
@@ -111,6 +111,6 @@ def order(word):                                        #연산자 우선 순위
     else:
         return -1
 
-stack = Stack()                                        #스택을 전역 변수로 선언 및 
+stack = Stack()                                        #스택을 전역 변수로 선언 및 실행
 if __name__ == '__main__':
     main()
