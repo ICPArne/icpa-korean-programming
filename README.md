@@ -2,11 +2,8 @@
 인천포스코고등학교 3기 R&E- 초등 교육을 위한 한글 프로그래밍 언어 '고래'입니다.
 
 <언어 사용법>
-- 해당 폴더에 첨부되어 있는 whales.exe의 경우 Pyinstaller의 onefile 기능을 사용하여 제작되어,
-  초기 실행 속도에 지연이 존재합니다. (whale.py의 경우 지연 없음)
-- 이를 해결하기 위해 PyPI에 패키지를 배포하였습니다.
-  "pip install whale"을 이용해 설치하신 후, "from whale import whale"을 이용해 실행하시면 됩니다.  
-
+- 해당 폴더에 첨부되어 있는 whales.exe의 경우 Pyinstaller의 onefile 기능을 사용하여 제작되어, 초기 실행 속도에 지연이 존재합니다. (whale.py의 경우 지연 없음)
+- 이를 해결하기 위해 PyPI에 패키지를 배포하였습니다. "pip install whale"을 이용해 설치하신 후, "from whale import whale"을 이용해 실행하시면 됩니다. (2018년 12월 24일 기준, 최신 버전은 1.1.2입니다. 이하의 버전에서는 작동이 되지 않으므로 반드시 1.1.2 버전을 설치하시길 바랍니다.)
 - 구문 분석 파일은 silhaeng.py, 토큰 관련 파일은 token_p.py를 참조하시고
   사용법은 Keyword.txt나 Example.txt를 참조하시길 바랍니다.
 
