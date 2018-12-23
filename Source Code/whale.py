@@ -89,7 +89,7 @@ def kor_input():
 
     return '\n'.join(result)
 
-
+#이하 부분을 main() 함수로 치환 시 작동을 장담할 수 없습니다.
 if __name__ == "__main__":
     while True:
         try:
