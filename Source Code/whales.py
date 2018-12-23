@@ -35,6 +35,7 @@ def turn_on_gui(before=False):
    Grid.columnconfigure(code_label, 0, weight=1)
    '''
    #버튼 관련 주석
+   #이미지인 button.png가 exe 파일에 적용되지 않아 
    b_image = PhotoImage(file="button.png")
    b_1 = Button(i, image=b_image, bg="white", command=lambda: click())
    b_1.grid(column=0, row=1)
