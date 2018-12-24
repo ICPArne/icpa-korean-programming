@@ -35,7 +35,6 @@ def turn_on_gui(before=False):
    Grid.columnconfigure(code_label, 0, weight=1)
    '''
    #버튼 관련 주석
-   #이미지인 button.png가 exe 파일에 적용되지 않아 
    b_image = PhotoImage(file="button.png")
    b_1 = Button(i, image=b_image, bg="white", command=lambda: click())
    b_1.grid(column=0, row=1)
@@ -89,7 +88,7 @@ def kor_input():
 
     return '\n'.join(result)
 
-#이하 부분을 main() 함수로 치환 시 작동을 장담할 수 없습니다.
+
 if __name__ == "__main__":
     while True:
         try:
@@ -160,8 +159,10 @@ if __name__ == "__main__":
                 else:
                     if value_str.split()[3] == 'list':
                         print("자료형 오류: 배열은 배열만을 더해서 연장할 수 있습니다.")
-                    else:
+                    elif value_str.split()[3] == 'str':
                         print("자료형 오류: 문자열은 문자열만을 더해서 연장할 수 있습니다.")
+                    elif value_str.split()[3] == 'tuple':
+                        print("자료형 오류: 튜플은 튜플만을 더해서 연장할 수 있습니다.")
                 
         except RecursionError as recur:
             recur_str = "".join([x for x in recur.args])
