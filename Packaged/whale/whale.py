@@ -89,7 +89,7 @@ def kor_input():
     return '\n'.join(result)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" or __name__ == "whale" or __name__ == "whale.whale":
     while True:
         try:
             raw_code = kor_input()
