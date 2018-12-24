@@ -23,7 +23,7 @@ def turn_on_gui(before=False):
 
    i = random.random
    i = Tk()
-   i.title("고래(ver. 1.0.0)")
+   i.title("고래(ver. 1.1.3)")
 
    code_label = LabelFrame(i, text="코드 작성 부분")
    code_label.grid(column=0, row=0, padx=8, pady=4, sticky=N + S + E + W)
@@ -89,7 +89,7 @@ def kor_input():
     return '\n'.join(result)
 
 
-if __name__ == "__main__" or __name__ == "whale.whale":
+if __name__ == "__main__":
     while True:
         try:
             raw_code = kor_input()
@@ -121,6 +121,16 @@ if __name__ == "__main__" or __name__ == "whale.whale":
                 elif value_str.split()[0][0] == "'":
                     if value_str == "'str' object does not support item assignment":
                         print("자료형 오류: 문자열 리터럴의 일부를 수정할 수 없습니다.")
+                    else:
+                        if value_str.split()[-1] == 'iterable':
+                            typeKind = {"'int'": '정수', "'str'": '문자열', "'float'": '실수', "'list'": '배열', "'tuple'": '튜플', "'dict'": '사전', "'type'": '자료형', "'NoneType'": '없음', "'complex'": '복소수'}
+                            value_spt = value_str.split()
+
+                            for i in range(len(value_spt)):
+                                if value_spt[i] in typeKind.keys():
+                                    value_spt[i] = typeKind[value_spt[i]]
+
+                            print("자료형 오류: '{0}'은/는 반복될 수 없는 자료형입니다.".format(value_spt[0]))
                 else:
                     value_spt = value_str.split()
                     value_spt[0] = value_spt[0][:-2]
@@ -146,6 +156,7 @@ if __name__ == "__main__" or __name__ == "whale.whale":
                 if value_spt[0] == 'unsupported':
                     print("자료형 오류: '{0}', '{1}' 사이에 부적절한 연산자 '{2}'가 사용되었습니다.". \
                           format(value_spt[5], value_spt[7], value_spt[4][0]))
+                    
                 elif value_spt[0] == 'must':
                     typeKind = {'int': '정수', 'str': '문자열', 'float': '실수', 'list': '배열', 'tuple': '튜플', 'dict': '사전', 'type': '자료형', 'NoneType': '없음', 'complex': '복소수'}
                     value_spt[2] = value_spt[2][:-1]
@@ -156,11 +167,19 @@ if __name__ == "__main__" or __name__ == "whale.whale":
                             
                     print("자료형 오류: '{0}'이/가 사용되지 않고 '{1}'이/가 사용되어야 합니다.". \
                           format(value_spt[4], value_spt[2]))
-                else:
+                    
+                elif value_spt[0] == 'can':
                     if value_str.split()[3] == 'list':
                         print("자료형 오류: 배열은 배열만을 더해서 연장할 수 있습니다.")
-                    else:
+                    elif value_str.split()[3] == 'str':
                         print("자료형 오류: 문자열은 문자열만을 더해서 연장할 수 있습니다.")
+                    elif value_str.split()[3] == 'tuple':
+                        print("자료형 오류: 튜플은 튜플만을 더해서 연장할 수 있습니다.")
+                    else:
+                        print("자료형 오류: 연산이나 함수에 쓰인 자료형을 확인하십시오.")
+
+                else:
+                    print("자료형 오류: 연산이나 함수에 쓰인 자료형을 확인하십시오.")
                 
         except RecursionError as recur:
             recur_str = "".join([x for x in recur.args])
