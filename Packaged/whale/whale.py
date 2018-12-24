@@ -70,6 +70,14 @@ def kor_input():
                 continue
             turn_on_gui(before=True)
             return gui_txt
+        elif text == '화면청소':
+            import os
+            return "import os \nos.system('cls')"
+        elif text == '도움말':
+            print("작성시작: 코드를 입력할 수 있는 새로운 창이 열립니다. 'F5'키를 누를 경우 실행됩니다.")
+            print("기존코드: 가장 마지막으로 입력한 코드가 써져있는 창이 열립니다.")
+            print("화면청소: 화면을 깨끗이 비웁니다.")
+            print("종료: 프로그램을 졸요합니다.")
         elif text == '종료':
             exit()
         else:
