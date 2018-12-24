@@ -23,7 +23,7 @@ def turn_on_gui(before=False):
 
    i = random.random
    i = Tk()
-   i.title("고래(ver. 1.1.3)")
+   i.title("고래(ver. 1.1.7)")
 
    code_label = LabelFrame(i, text="코드 작성 부분")
    code_label.grid(column=0, row=0, padx=8, pady=4, sticky=N + S + E + W)
@@ -104,10 +104,9 @@ if __name__ == "__main__":
         except TypeError as value:
             value_str = "".join([x for x in value.args])
             first = value_str.split()[0]
-
                 
             # 함수 매개변수 오류
-            if first not in ('unsupported', 'can', 'must'):
+            if first not in ('unsupported', 'can', 'must', 'cannot'):
                 if value_str.split()[1][0] == 'm':
                     if int(value_str[value_str.find('missing')+8:value_str.find('required')-1]) <= 2:
                         mis_args = value_str.split(':')[1][1:].replace(' and ', ', ')
@@ -178,8 +177,14 @@ if __name__ == "__main__":
                     else:
                         print("자료형 오류: 연산이나 함수에 쓰인 자료형을 확인하십시오.")
 
-                else:
-                    print("자료형 오류: 연산이나 함수에 쓰인 자료형을 확인하십시오.")
+                elif value_spt[0] == 'cannot':
+                    typeKind = {'int': '정수', 'str': '문자열', 'float': '실수', 'list': '배열', 'tuple': '튜플', 'dict': '사전', 'type': '자료형', 'NoneType': '없음', 'complex': '복소수'}
+                    for i in range(len(value_spt)):
+                        if value_spt[i] in typeKind.keys():
+                            value_spt[i] = typeKind[value_spt[i]]
+
+                    print("자료형 오류: '{0}'은/는 반복될 수 없는 자료형입니다.".format(value_spt[3]))
+        
                 
         except RecursionError as recur:
             recur_str = "".join([x for x in recur.args])
@@ -208,7 +213,11 @@ if __name__ == "__main__":
             print("Ctrl+C가 입력되어 중지되었습니다.")
 
         except Exception as e:
-            print('오류:', e.args)
+            exc_str = "".join([x for x in e.args])
+            if exc_str == "'list' object has no attribute 'text'":
+                print("입력 오류: 잘못된 코드를 입력하였습니다.")
+            else:
+                print('오류:', e.args)
 
         finally:
             scr = None
