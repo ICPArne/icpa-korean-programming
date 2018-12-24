@@ -22,6 +22,9 @@ class TknKind(Enum):
     Comma      = auto()
     SglQ       = auto()
     DblQ       = auto()
+    bitAnd     = auto()
+    bitOr      = auto()
+    bitXor     = auto()
     Equal      = auto()
     NotEq      = auto()
     Less       = auto()
@@ -148,6 +151,9 @@ KeyWdTbl = [
     Keyword('%', TknKind.Modulo),
     Keyword('=', TknKind.Assign),
     Keyword(',', TknKind.Comma),
+    Keyword('&', TknKind.bitAnd),
+    Keyword('|', TknKind.bitOr),
+    Keyword('^', TknKind.bitXor),
     Keyword('==', TknKind.Equal),
     Keyword('!=', TknKind.NotEq),
     Keyword('<', TknKind.Less),
@@ -202,6 +208,9 @@ def initChTyp():
     ctyp[']'] = TknKind.Rsquare
     ctyp['{'] = TknKind.Lcurly
     ctyp['}'] = TknKind.Rcurly
+    ctyp['&'] = TknKind.bitAnd
+    ctyp['|'] = TknKind.bitOr
+    ctyp['^'] = TknKind.bitXor
     ctyp['<'] = TknKind.Less
     ctyp['>'] = TknKind.Great
     ctyp['+'] = TknKind.Plus
