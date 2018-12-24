@@ -27,33 +27,15 @@ class customLine(Enum):
 
 
 codeText = '''
-그래프, 출발점을 받는 BFS 선언하기:
-    큐 = []
-    방문한곳 = []
+리스트, 목표값을 받는 선형탐색 선언하기:
+    인덱스를 0부터 리스트의 길이까지 반복하기:
+        만약 리스트[인덱스] == 목표값이면:
+            인덱스 반환하기
+    -1 반환하기
 
-    큐에 출발점 추가하기
-    방문한곳에 출발점 추가하기
 
-    큐의 길이 > 0인 동안 반복하기:
-        현재위치 = 큐에서 꺼낸 값
-        현재위치 출력하기
-
-        번호를 0부터 그래프[현재위치]의 길이까지 반복하기:
-            다음위치 = 그래프[현재위치][번호]
-            
-            만약 다음위치가 방문한곳 안에 있지 않음이면:
-                큐에 다음위치 추가하기
-                방문한곳에 다음위치 추가하기
-
-그래프 = {
-    1: [2, 3],
-    2: [1, 4, 5],
-    3: [1],
-    4: [2],
-    5: [2]
-}
-
-BFS(그래프, 1)
+리스트 = [1, 2, 3, 4, 5]
+선형탐색(리스트, 3) 출력하기
 
 '''
 
@@ -338,9 +320,9 @@ def translate(lis):
                 break
         if isIndex:
             for i in range(len(lis)):
-                if lis[i].text.endswith('의'):
+                if lis[i].text.endswith('에서'):
                     lisNum = i
-                    delCharReToken(lis, lisNum, 1)
+                    delCharReToken(lis, lisNum, 2)
                     break
             indexGuCode = lisTranslate(lis[lisNum+1:indexNum+1])
             lastNum = indexNum + 1
@@ -351,7 +333,7 @@ def translate(lis):
                     delCharReToken(lis, lisNum, 2)
                     break
             indexGuCode = ''
-            lastNum = lisNum+1
+            lastNum = lisNum + 1
         lisGuCode = lisTranslate(lis[:lisNum+1])
         if lis[lastNum].text == '꺼낸':
             lastNum += 1
